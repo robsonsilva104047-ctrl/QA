@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UniFECAF Shop - Atividade de QA</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topo">
+    <div>
+      <p class="tag">Atividade de Investigação em QA</p>
+      <h1>UniFECAF Shop</h1>
+      <p>Uma loja simples para análise de qualidade, usabilidade, regras de negócio e integração com API.</p>
+    </div>
+    <button id="btnMenu" class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" aria-label="Menu principal">
+      <a href="#produtos">Produtos</a>
+      <a href="#carrinho">Carrinho</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h2>Investigue o funcionamento do sistema</h2>
+        <p>Este site consome uma API pública externa para carregar produtos. Analise comportamento, layout, mensagens, validações, acessibilidade e regras de negócio.</p>
+        <button id="btnAtualizar" class="botao-principal">Atualizar produtos</button>
+      </div>
+      <div class="card-resumo">
+        <p>Itens no carrinho</p>
+        <strong id="contadorCarrinho">0</strong>
+      </div>
+    </section>
+
+    <section id="produtos" class="secao">
+      <div class="secao-cabecalho">
+        <div>
+          <h2>Produtos disponíveis</h2>
+          <p>Dados carregados da API DummyJSON.</p>
+        </div>
+        <label for="busca">Buscar produto</label>
+        <input id="busca" type="text" placeholder="Digite o nome do produto" />
+      </div>
+
+      <p id="statusApi" class="status" role="status" aria-live="polite">Carregando produtos...</p>
+      <div id="listaProdutos" class="grid-produtos"></div>
+    </section>
+
+    <section id="carrinho" class="secao carrinho-box">
+      <h2>Carrinho</h2>
+      <p>Confira os produtos selecionados.</p>
+      <ul id="listaCarrinho"></ul>
+      <p class="total">Total: R$ <span id="totalCarrinho">0,00</span></p>
+      <button id="btnFinalizar" class="botao-secundario">Finalizar compra</button>
+      <p id="mensagemCompra" class="mensagem"></p>
+    </section>
+
+    <section id="contato" class="secao formulario-box">
+      <h2>Solicitar atendimento</h2>
+      <p>Preencha os dados para receber contato da equipe.</p>
+
+      <form id="formContato" novalidate>
+        <div class="campo">
+          <label for="nome">Nome completo</label>
+          <input id="nome" type="text" placeholder="Seu nome" />
+        </div>
+
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input id="email" type="email" placeholder="seuemail@exemplo.com" />
+        </div>
+
+        <div class="campo">
+          <label for="curso">Curso de interesse</label>
+          <select id="curso">
+            <option value="">Selecione</option>
+            <option value="qa">Quality Assurance</option>
+            <option value="cyber">Cyber Security</option>
+            <option value="dados">Análise de Dados</option>
+          </select>
+        </div>
+
+        <div class="campo linha">
+          <input id="termos" type="checkbox" />
+          <label for="termos">Li e aceito os termos de contato</label>
+        </div>
+
+        <button type="submit" class="botao-principal">Enviar solicitação</button>
+        <p id="mensagemFormulario" class="mensagem"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Material didático para investigação em QA - UniFECAF.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
